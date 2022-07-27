@@ -1,0 +1,288 @@
+{
+    "name": "vscode-fspath-desktop-integration",
+    "displayName": "File path Desktop Integration",
+    "icon": "images/icon.png",
+    "description": "VS Code extention for file path Desktop Integration. Copy Path, Reveal in file Explorer, Run external terminal, Run built in terminal.",
+    "version": "1.0.12",
+    "license": "MIT",
+    "publisher": "sandipchitale",
+    "author": {
+        "name": "Sandip Chitale"
+    },
+    "maintainers": [
+        "Sandip Chitale <sandipchitale@gmail.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sandipchitale/vscode-fspath-desktop-integration"
+    },
+    "engines": {
+        "vscode": "^1.69.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "vscode-fspath-desktop-integration.explorer.copyName",
+                "title": "Copy Name"
+            },
+
+            {
+                "command": "vscode-fspath-desktop-integration.explorer.copyPaths",
+                "title": "Copy path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.explorer.explorerPaths",
+                "title": "Reveal path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.explorer.terminalPaths",
+                "title": "Terminal at path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.explorer.externalTerminalPaths",
+                "title": "External terminal at path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.explorer.openPaths",
+                "title": "Open Workbench with path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.explorer.reopenPaths",
+                "title": "Reopen Workbench with path(s)..."
+            },
+
+            {
+                "command": "vscode-fspath-desktop-integration.editor-title.copyName",
+                "title": "Copy Name"
+            },
+
+            {
+                "command": "vscode-fspath-desktop-integration.editor-title.copyPaths",
+                "title": "Copy path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor-title.explorerPaths",
+                "title": "Reveal path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor-title.terminalPaths",
+                "title": "Terminal at path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor-title.externalTerminalPaths",
+                "title": "External terminal at path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor-title.openPaths",
+                "title": "Open Workbench with path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor-title.reopenPaths",
+                "title": "Reopen Workbench with path(s)..."
+            },
+
+            {
+                "command": "vscode-fspath-desktop-integration.editor.copyName",
+                "title": "Copy Name"
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor.copyPath",
+                "title": "Copy path"
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor.copyRelativePath",
+                "title": "Copy relative path"
+            },
+
+            {
+                "command": "vscode-fspath-desktop-integration.editor.copyPaths",
+                "title": "Copy path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor.openPaths",
+                "title": "Open Workbench with path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor.reopenPaths",
+                "title": "Reopen Workbench with path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor.explorerPaths",
+                "title": "Reveal path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor.terminalPaths",
+                "title": "Terminal at path(s)..."
+            },
+            {
+                "command": "vscode-fspath-desktop-integration.editor.externalTerminalPaths",
+                "title": "External terminal at path(s)..."
+            }
+        ],
+        "submenus": [
+            {
+                "id": "vscode-fspath-desktop-integration.explorer.path-operations",
+                "label": "Paths"
+            },
+            {
+                "id": "vscode-fspath-desktop-integration.editor-title.path-operations",
+                "label": "Paths"
+            },
+            {
+                "id": "vscode-fspath-desktop-integration.editor.path-operations",
+                "label": "Paths"
+            }
+        ],
+        "menus": {
+            "vscode-fspath-desktop-integration.explorer.path-operations": [
+                {
+                    "command": "vscode-fspath-desktop-integration.explorer.copyPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.explorer.explorerPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.explorer.terminalPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.explorer.externalTerminalPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.explorer.openPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.explorer.reopenPaths",
+                    "when": "resourceScheme == file"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "vscode-fspath-desktop-integration.explorer.copyName",
+                    "group": "6_copypath@0",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "submenu": "vscode-fspath-desktop-integration.explorer.path-operations",
+                    "group": "6_copypath@100"
+                }
+            ],
+            "vscode-fspath-desktop-integration.editor-title.path-operations": [
+                {
+                    "command": "vscode-fspath-desktop-integration.editor-title.copyPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor-title.explorerPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor-title.terminalPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor-title.externalTerminalPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor-title.openPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor-title.reopenPaths",
+                    "when": "resourceScheme == file"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "command": "vscode-fspath-desktop-integration.editor-title.copyName",
+                    "group": "1_cutcopypaste@0",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "submenu": "vscode-fspath-desktop-integration.editor-title.path-operations",
+                    "group": "1_cutcopypaste@100"
+                }
+            ],
+            "vscode-fspath-desktop-integration.editor.path-operations": [
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.copyPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.explorerPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.terminalPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.externalTerminalPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.openPaths",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.reopenPaths",
+                    "when": "resourceScheme == file"
+                }
+            ],
+            "editor/context": [
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.copyName",
+                    "group": "1_cutcopypaste@0",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.copyPath",
+                    "group": "1_cutcopypaste@0",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "vscode-fspath-desktop-integration.editor.copyRelativePath",
+                    "group": "1_cutcopypaste@0",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "submenu": "vscode-fspath-desktop-integration.editor.path-operations",
+                    "group": "1_cutcopypaste@100"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.2.2",
+        "@types/node": "14.x",
+        "@types/vscode": "^1.69.0",
+        "@typescript-eslint/eslint-plugin": "^4.26.0",
+        "@typescript-eslint/parser": "^4.26.0",
+        "eslint": "^7.27.0",
+        "glob": "^7.1.7",
+        "mocha": "^10.0.0",
+        "typescript": "^4.3.2",
+        "vscode-test": "^1.5.2"
+    }
+}
